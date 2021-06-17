@@ -7,5 +7,5 @@ Using 16bit audio data to render Unicode characters.
 ## Jupyter Notebook
 
 ```
-jupyter nbconvert --to html notebook.ipynb  
+jupyter nbconvert --to html ArcheWriting.ipynb
 ```
