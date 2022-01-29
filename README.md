@@ -1,10 +1,14 @@
 # ArcheWriting
 
-Using 16bit audio data to render Unicode characters.
+Using 8bit audio data to render Unicode characters.
 
-![](./image.jpg)
+## Processing
+
+<img style="width: 400px; height: 400px" src="./image.jpg">
 
 ## Jupyter Notebook
+
+Documentation process of how the conversion occurs: [Notebook](./ArcheWriting.ipynb)
 
 ```
 jupyter nbconvert --to html ArcheWriting.ipynb
