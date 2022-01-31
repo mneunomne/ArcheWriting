@@ -9,24 +9,22 @@ boolean draw_rects = false;
 int w = 1280;
 int h = 1748;
 
-float start_percentage_size = 0.05;
+float start_percentage_size = 0.1;
 
 PFont font;
 
 String[] result;
 
 void setup() {
-  
-  
-  String[] lines = loadStrings("text/91.txt");
+  String[] lines = loadStrings("text/352.txt");
   String text = lines[0];
   result = text.split("");
   
   float percentage_size = getPercentageSize(start_percentage_size);
 
   println("percentage_size", percentage_size);
-
-  beginRecord(SVG, "data-###.svg");
+  String n = Integer.toString(int(random(100)));
+  beginRecord(SVG, "exp/data-"+n+".svg");
   size(1280, 1748, P2D);
   
   background(255);
@@ -37,10 +35,10 @@ void setup() {
   float c_w =  percentage_size * w;
   float c_h = c_w;
 
-  font = createFont("Arial",32,true);
+  font = createFont("Arial",120,true);
   textFont(font);
   textAlign(CENTER, CENTER);
-  textSize(c_h*0.75);
+  textSize(c_h*0.7);
 
   int x = marginX;
   int y = marginY;
@@ -63,7 +61,7 @@ void setup() {
     }
     x+=c_w;
   }
-  endRecord();  
+  endRecord();
 }
 
 float getPercentageSize (float start_percentage_size) {
@@ -79,17 +77,12 @@ int getLastY (float p) {
   float c_h = c_w;
   int x = marginX;
   int y = marginY;
-  println(marginX, marginY);
   for (int i = 0; i < result.length; i++) {
     if (x >= w-c_w*2-marginX) {
       x = marginX;
       y+= c_h;
     }
     x+=c_w;
-    float x2 = x+c_w;
-    float y2 = y+c_h;
-    fill(random(255), 255, 255);
-    // rect(x,y,c_w,c_h);
   }
   return y;
 }
